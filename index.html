@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Project Assignment</title>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+SC:600|Roboto:300" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/responsive.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" 	data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span> 
+              </button>
+              <a class="navbar-brand" href="#">Smart People Club</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#test">Test</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+          </div>
+        </nav>
+    </header>
+    <main>
+        <section id="home" class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12" id="hello-img">
+                    <div class="image-container">
+                        <h1>Hello <br></h1>
+                        <h2> What's your name? </h2>
+                        <form id="name-form">
+                            <input type="text" id="name-input" autocomplete="off">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <article class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3>We are the Smart People Club</h3>
+                    <p>And we are always looking for new smart members. We will give you a personality test, after filling out the form, you will become a member of our club and get to take part of all the perks of being in SPC. Good Luck!</p>
+                </div>
+            </div>
+        </article>
+        <hr id="test"> 
+        <p class="symbol-space">&#8216;&#8217;</p>
+        <section class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <form id="traits">
+                        <h3>Your traits</h3>
+                        <p>Please fill in your traits using all 100 points</p>
+                        <div class="form-group">
+                            <label for="intelligence" class="label-before">Intelligence</label>
+                            <input type="number" id="intelligence" class="traits-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="kindness" class="label-before">Kindness</label>
+                            <input type="number" id="kindness" class="traits-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="humor" class="label-before">Humor</label>
+                            <input type="number" id="humor" class="traits-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="empathy" class="label-before">Empathy</label>
+                            <input type="number" id="empathy" class="traits-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="extrovert" class="label-before">Extrovert</label>
+                            <input type="number" id="extrovert" class="traits-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="logical" class="label-before">Logical</label>
+                            <input type="number" id="logical" class="traits-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="organized" class="label-before">Organized</label>
+                            <input type="number" id="organized" class="traits-input">
+                        </div>
+                        <p id="points-left"> Points left</p>
+                        <span id="points"> 100 </span>
+                        <input type="submit" value="Submit" id="traits-submit" onClick="submitForm(); return false;">
+                    </form> 
+                </div>
+            </div>
+        </section>
+        <section id="bar-chart" class="container-fluid">
+            <div id="chart" class="row">
+                <div class="col-xs-12">
+                    <div class="chart-bar" id="intelligence-bar"> Intelligence</div>
+                    <div class="chart-bar" id="kindness-bar"> Kindness</div>
+                    <div class="chart-bar" id="humor-bar"> Humor</div>
+                    <div class="chart-bar" id="empathy-bar"> Empathy</div>
+                    <div class="chart-bar" id="extrovert-bar"> Extrovert</div>
+                    <div class="chart-bar" id="logical-bar"> Logical</div>
+                    <div class="chart-bar" id="organized-bar"> Organized</div>
+                </div>
+            </div>
+            <p id="message"></p>
+        </section>
+        <p class="symbol-space">&#8216;&#8217;</p>
+        <article class="container-fluid" id="pictures">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                    <img src="images/house.jpg" class="like-img">
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <h3>Do you like this picture?</h3>
+                    <button class="btn" id="yes-btn-1" >Yes</button>
+                    <button class="btn" id="no-btn-1" >No</button>
+                    <div class="pic-label">
+                        <div class="thumbs-up">
+                            <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> <label for="yes-btn-1" class=""> 20 </label> 
+                        </div>
+                        <div class="thumbs-down">
+                            <i class="fa fa-thumbs-o-down" aria-hidden="true"></i> <label for="no-btn-1"> 10 </label> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6" id="swap-pic">
+                    <img src="images/river.jpg" class="like-img">
+                </div>
+                 <div class="col-xs-12 col-sm-6">
+                    <h3>What about this one?</h3>
+                    <button class="btn" id="yes-btn-2">Yes</button>
+                    <button class="btn" id="no-btn-2">No</button>
+                    <div class="pic-label">
+                        <div class="thumbs-up">
+                            <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> <label for="yes-btn-2"> 30 </label>
+                        </div>
+                        <div class="thumbs-down">
+                            <i class="fa fa-thumbs-o-down" aria-hidden="true"></i> <label for="no-btn-2"> 7 </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <p class="symbol-space">&#8216;&#8217;</p>
+        <section class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1>Last Part</h1>
+                    <form id="join-form">
+                        <div class="form-group">
+                            <label class="label-before">Your Age</label><input type="number" class="join-input" id="age">
+                        </div>
+                        <div class="form-group">
+                            <label class="label-before">Your favorite quote</label><input type="text" class="join-input" id="quote" autocomplete="off">
+                        </div>
+                        <input type="submit" value="Submit" id="submit-btn">
+                    </form>
+                    <div class="members">
+                        <h3>Members of the SPC: </h3>
+                        <p>"I'm awesome" - Mikaela, 22</p>
+                        <p>"Great minds think alike" - Brownie, 26</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr id="contact">
+        <p class="symbol-space">&#8216;&#8217;</p>
+        <section id="contact-info" class="container-fluid">
+            <h3>Contact</h3>
+            <div class="row">
+                <div class="col-xs-12">
+                    <p><span class="glyphicon glyphicon-envelope"></span> SPC@mail.com </p>
+                    <p><span class="glyphicon glyphicon-earphone"></span> +46700 000 000</p>
+                    <p><span class="glyphicon glyphicon-map-marker"></span> Smart Street A*</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+                <h5> &copy; Smart People Club </h5>
+            </div>
+        </div>
+    </footer>
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script src="app.js"></script>
+</body>
+</html>
