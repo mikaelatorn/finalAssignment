@@ -4,15 +4,18 @@ Mikaela Törnlund
 LinkedIn Profile : https://se.linkedin.com/in/mikaela-törnlund-36387512b
 
 Skola : Lernia Yrkeshögskola Distans Från Stockholm. 
-Kurs : Javascriptutvecklare Front-End
+Program : Javascriptutvecklare Front-End
+Kurs :  HTML, CSS, Javascript och Webbstandarder
+Uppgift : Slutprojekt i kursen.
 
 Teknologier använda : 
-	Bootstrap: Till menyn och row + column klasser till struktur på hemsidan, HTML/HTML5: Struktur 
-	Css: Mycket egen css och flertal media queries
-	Jquery: Animation till form, lägga till +1 på “like och dislike” beroende på vilken knapp man trycker på. Lägga till paragraf och header på sidan beroende på vad användaren skriver in.  
-	Javascript: Lägga till ett stapeldiagram med behöriga värden som användaren skriver in. 
+	<p> Bootstrap: Till menyn och row + column klasser till struktur på hemsidan </p>
+	<p> HTML/HTML5: Struktur </p> 
+	<p> Css: Mycket egen css och flertal media queries </p>
+	<p> Jquery: Animation till form, lägga till +1 på “like och dislike” beroende på vilken knapp man trycker på. Lägga till paragraf och header på sidan beroende på vad användaren skriver in.  </p>
+	<p> Javascript: Lägga till ett stapeldiagram med behöriga värden som användaren skriver in. </p>
 
-Slutprojekt/Uppgift HTML, CSS, Javascript, Webbstandarder
+
 
 
 Arbetsprocess : 
