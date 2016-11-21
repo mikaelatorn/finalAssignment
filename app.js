@@ -7,17 +7,22 @@ var traits = {
     "logical" : 0,
     "organized" : 0
 };
-    
 
-$(document).ready(function () { //function for when the html doc is ready
-    $("a").on('click', function (event) { // event on click ( a (link) tag )
+var smartEnough = false;
+    
+$(document).ready(function () { 
+    
+    $('input[type="submit"]').prop('disabled', true);  // default submit behavior
+    $('input[type="submit"').css('background', '#323233');
+    
+    $("a").on('click', function (e) { // event on click ( a (link) tag )
         if (this.hash !== "") {
-            event.preventDefault(); // Prevent default anchor click behavior (home)
+            e.preventDefault(); 
             var hash = this.hash;      // Store hash code
      
             $('html, body').animate({ // Using animate() to add animated page scroll
                 scrollTop: $(hash).offset().top
-            }, 900, function () {  // 900 millisec to scroll down
+            }, 900, function () {  
                 window.location.hash = hash;  // Add hash (#) to URL when done scrolling 
             });
         }
@@ -38,18 +43,14 @@ $(document).ready(function () { //function for when the html doc is ready
         }
     });
     
-    $('.traits-input, .join-input').on("focusout", function () { // if input field empty - animate back t original place
+    $('.traits-input, .join-input').on("focusout", function () { // if field empty, animate back to original place
         if (!$(this).val()) {
             $(this).siblings().removeClass('label-after').addClass('label-before').animate({top : "+=20px"});
         }
     });
     
-    $('#traits-submit').prop('disabled', true);
-    $('#traits-submit').css('background', '#323233');
-    
     $('.traits-input').change(function () { // keep track of numbers used 
         var points = $('#points').text();
-        
         var traitID = $(this).attr('id');
         
         traits[traitID] = Number($(this).val());
@@ -61,29 +62,16 @@ $(document).ready(function () { //function for when the html doc is ready
         } else {  // show how many points are left and set the background back to white if earlier put too many
             points -= $(this).val();
             $('#points').text(100 - checkSum(traits));
-            $(this).css("background-color", "#FFF");
+            $('.traits-input').css("background-color", "#FFF");
             $('#points-left').show();
         }
         
         if (checkSum(traits) === 100) {  // if sum is exactly 100, enable the submit button
             $('#traits-submit').prop('disabled', false);
             $('#traits-submit').css('background', '#77dd77');
-            $('#traits-submit').css('color', '#FFF');
         }
     });
     
-    function checkTraits(traits) {  // check if the sum is more than 100 
-        var sum = checkSum(traits);
-        return sum <= 100;
-    }
-    
-    function checkSum(traits) { // check and return the sum of the traits
-        var sum = 0;
-        for (var key in traits) {
-            sum += traits[key];
-        }
-        return sum;
-    }
     
     $('#join-form').submit(function (e) {  // append a new paragraph with quote name and age to members
         e.preventDefault();
@@ -94,10 +82,27 @@ $(document).ready(function () { //function for when the html doc is ready
         var label = $("label[for='"+$(this).attr('id')+"']");
         $(label).html(function (i, val) { return val * 1 + 1; });
         $(label).siblings().css( 'color', '#ffa32b');
+        $(this).siblings().prop('disabled', true);
+        $(this).prop('disabled', true);
+        imageAnswer();
     });
+    
 });
 
-function submitForm() {
+function checkTraits(traits) {  // check if the sum is more than 100 
+    var sum = checkSum(traits);
+    return sum <= 100;
+}
+    
+function checkSum(traits) { // check and return the sum of the traits
+    var sum = 0;
+    for (var key in traits) {
+        sum += traits[key];
+    }
+    return sum;
+}
+
+function submitForm() {  // Function to make the graph for traits
     for(var key in traits) {
         var name = key + "-bar";
         var divs = document.getElementById(name);
@@ -105,11 +110,19 @@ function submitForm() {
         divs.style.backgroundColor = "#77dd77";
     }
     
-    if(traits.intelligence < 35) {
+    if(traits.intelligence < 35) {  // check so intelligence is high enough
         $('#message').append("Whoops, not enought intelligence to join our club.. Come back another time!");
-        $('#submit-btn').prop('disabled', true);
-        $('#submit-btn').css('background', '#323233');
+    } else {
+        smartEnough = true;
     }
-
 }
-    
+
+function imageAnswer() {  // if answer right on pictures + intellgence > 35
+    var firstCorrectAnswer = $('label[for="no-btn-1"]').text();
+    var secondCorrectAnswer = $('label[for="yes-btn-2"]').text();
+    if (smartEnough && firstCorrectAnswer == 11 && secondCorrectAnswer == 13) {
+        $('#submit-btn').prop('disabled', false);
+        $('#submit-btn').css('background', '#77dd77');
+    }
+}
+
