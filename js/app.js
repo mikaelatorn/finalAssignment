@@ -115,6 +115,7 @@ function submitForm() {  // Function to make the graph for traits
         $('#message').addClass('message-box');
     } else {
         smartEnough = true;
+        console.log(smartEnough);
     }
 }
 
@@ -122,8 +123,8 @@ function imageAnswer() {  // if answer right on pictures + intellgence > 35
     var firstCorrectAnswer = $('label[for="no-btn-1"]').text();
     var secondCorrectAnswer = $('label[for="yes-btn-2"]').text();
     if (smartEnough && firstCorrectAnswer == 11 && secondCorrectAnswer == 13) {
-        $('#submit-btn').prop('disabled', false);
-        $('#submit-btn').css('background', '#77dd77');
+        $('#join-btn').prop('disabled', false);
+        $('#join-btn').css('background', '#77dd77');
     }
 }
 
