@@ -133,7 +133,7 @@ input[type="submit"] {
     width: 40%;
     color: #FFF;
     border: none;
-    padding: 0.2em;
+    padding: 0.3em;
 } 
 
 input[type=number]::-webkit-inner-spin-button, 
@@ -190,8 +190,8 @@ button { background: #ff9042; }
     padding-top: 0.4em;
 }
 
-.thumbs-up { float: left; }
-.thumbs-down { float: right; }
+.answer-label-1 { float: left; }
+.answer-label-2 { float: right; }
 
 /* FOOTER */ 
 

@@ -121,8 +121,10 @@ function submitForm() {  // Function to make the graph for traits
 
 function imageAnswer() {  // if answer right on pictures + intellgence > 35
     var firstCorrectAnswer = $('label[for="no-btn-1"]').text();
+    console.log(firstCorrectAnswer);
     var secondCorrectAnswer = $('label[for="yes-btn-2"]').text();
-    if (smartEnough && firstCorrectAnswer == 11 && secondCorrectAnswer == 13) {
+    console.log(secondCorrectAnswer);
+    if (smartEnough && firstCorrectAnswer === 11 && secondCorrectAnswer === 13) {
         $('#join-submit').prop('disabled', false);
         $('#join-submit').css('background', '#77dd77');
     }
