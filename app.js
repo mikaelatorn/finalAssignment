@@ -106,12 +106,13 @@ function submitForm() {  // Function to make the graph for traits
     for(var key in traits) {
         var name = key + "-bar";
         var divs = document.getElementById(name);
-        divs.style.width = traits[key]*2 + "%";
+        divs.style.width = traits[key] + "%";
         divs.style.backgroundColor = "#77dd77";
     }
     
     if(traits.intelligence < 35) {  // check so intelligence is high enough
         $('#message').append("Whoops, not enought intelligence to join our club.. Come back another time!");
+        $('#message').addClass('message-box');
     } else {
         smartEnough = true;
     }

@@ -34,4 +34,6 @@
     }
     
     .form-group input { width: 25%;}
+    
+    .message-box { max-width: 50%;}
 }
