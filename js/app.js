@@ -79,7 +79,7 @@ $(document).ready(function () {
     });
     
     $('.btn').click(function () { // add 1 to like or dislike depending on which button you press
-        var label = $("label[for='"+$(this).attr('id')+"']");
+        var label = $('label[for="' + $(this).attr('id') + '"]');
         $(label).html(function (i, val) { return val * 1 + 1; });
         $(label).siblings().css('color', '#ffa32b');
         $(this).siblings().prop('disabled', true);
@@ -89,11 +89,6 @@ $(document).ready(function () {
     
 });
 
-function checkTraits(traits) {  // check if the sum is more than 100 
-    var sum = checkSum(traits);
-    return sum <= 100;
-}
-    
 function checkSum(traits) { // check and return the sum of the traits
     var sum = 0;
     for (var key in traits) {
@@ -102,6 +97,11 @@ function checkSum(traits) { // check and return the sum of the traits
     return sum;
 }
 
+function checkTraits(traits) {  // check if the sum is more than 100 
+    var sum = checkSum(traits);
+    return sum <= 100;
+}
+    
 function submitForm() {  // Function to make the graph for traits
     for (var key in traits) {
         var name = key + "-bar";
@@ -120,11 +120,12 @@ function submitForm() {  // Function to make the graph for traits
 }
 
 function imageAnswer() {  // if answer right on pictures + intellgence > 35
-    var firstCorrectAnswer = $('label[for="no-btn-1"]').text();
+    var firstCorrectAnswer = $('label[for="second-answer"]').text();
     console.log(firstCorrectAnswer);
-    var secondCorrectAnswer = $('label[for="yes-btn-2"]').text();
+    var secondCorrectAnswer = $('label[for="third-answer"]').text();
     console.log(secondCorrectAnswer);
-    if (smartEnough && firstCorrectAnswer === 11 && secondCorrectAnswer === 13) {
+    if (smartEnough && firstCorrectAnswer == 11 && secondCorrectAnswer == 13) {
+        console.log("hello");
         $('#join-submit').prop('disabled', false);
         $('#join-submit').css('background', '#77dd77');
     }
