@@ -28,4 +28,6 @@
     .message-box { max-width: 50%;}
     
     p { max-width: 50%; }
+    
+    input[type="submit"] { width: 30%; }
 }
