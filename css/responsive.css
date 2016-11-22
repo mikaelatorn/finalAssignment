@@ -19,19 +19,11 @@
 }
 
 @media screen and (min-width: 900px) {
-    #hello-img {
-        width:100%;
-    }
+    #hello-img { width:100%;}
     
-    .image-container {
-        padding: 20em 0 20em 0;
-    }
+    .image-container { padding: 20em 0 20em 0; }
     
-    input[type="submit"] { width: 30%; }
-    
-    #pictures {
-        max-width: 70%;
-    }
+    #pictures { max-width: 70%;}
     
     .form-group input { width: 25%;}
     
