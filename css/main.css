@@ -19,6 +19,8 @@ h1, h2, h3 {
 
 h3, h4, p { padding: 1em; }
 
+p { font-size: 1.3em;}
+
 article, section:not(:first-child) { margin-top: 2em;}
 
 hr { 
@@ -128,6 +130,10 @@ input[type="submit"] {
     border-radius: 0.1em;
     margin:  2em auto;
     display: block;
+    width: 40%;
+    color: #FFF;
+    border: none;
+    padding: 0.2em;
 } 
 
 input[type=number]::-webkit-inner-spin-button, 
@@ -169,6 +175,8 @@ button { background: #ff9042; }
 }
 
 #pictures { margin-bottom: 5em;}
+
+#pictures h3 { margin-top: 0; }
 
 /* JOIN CLUB + CONTACT*/
 

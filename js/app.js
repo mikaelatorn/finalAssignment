@@ -10,19 +10,19 @@ var traits = {
 
 var smartEnough = false;
     
-$(document).ready(function () { 
+$(document).ready(function () {
     
     $('input[type="submit"]').prop('disabled', true);  // default submit behavior
     $('input[type="submit"').css('background', '#323233');
     
     $("a").on('click', function (e) { // event on click ( a (link) tag )
         if (this.hash !== "") {
-            e.preventDefault(); 
+            e.preventDefault();
             var hash = this.hash;      // Store hash code
      
             $('html, body').animate({ // Using animate() to add animated page scroll
                 scrollTop: $(hash).offset().top
-            }, 900, function () {  
+            }, 900, function () {
                 window.location.hash = hash;  // Add hash (#) to URL when done scrolling 
             });
         }
@@ -75,13 +75,13 @@ $(document).ready(function () {
     
     $('#join-form').submit(function (e) {  // append a new paragraph with quote name and age to members
         e.preventDefault();
-       $('.members').append('<p> "' + $('#quote').val() + '" - ' + $('#name-input').val() + ', ' + $('#age').val() + '</p>');
+        $('.members').append('<p> "' + $('#quote').val() + '" - ' + $('#name-input').val() + ', ' + $('#age').val() + '</p>');
     });
     
     $('.btn').click(function () { // add 1 to like or dislike depending on which button you press
         var label = $("label[for='"+$(this).attr('id')+"']");
         $(label).html(function (i, val) { return val * 1 + 1; });
-        $(label).siblings().css( 'color', '#ffa32b');
+        $(label).siblings().css('color', '#ffa32b');
         $(this).siblings().prop('disabled', true);
         $(this).prop('disabled', true);
         imageAnswer();
@@ -103,15 +103,15 @@ function checkSum(traits) { // check and return the sum of the traits
 }
 
 function submitForm() {  // Function to make the graph for traits
-    for(var key in traits) {
+    for (var key in traits) {
         var name = key + "-bar";
         var divs = document.getElementById(name);
         divs.style.width = traits[key] + "%";
         divs.style.backgroundColor = "#77dd77";
     }
     
-    if(traits.intelligence < 35) {  // check so intelligence is high enough
-        $('#message').append("Whoops, not enought intelligence to join our club.. Come back another time!");
+    if (traits.intelligence < 35) {  // check so intelligence is high enough
+        $('#message').append("Whoops, not enought intelligence to join our club.. Come back another time! (Or refresh the page..)");
         $('#message').addClass('message-box');
     } else {
         smartEnough = true;
@@ -123,8 +123,8 @@ function imageAnswer() {  // if answer right on pictures + intellgence > 35
     var firstCorrectAnswer = $('label[for="no-btn-1"]').text();
     var secondCorrectAnswer = $('label[for="yes-btn-2"]').text();
     if (smartEnough && firstCorrectAnswer == 11 && secondCorrectAnswer == 13) {
-        $('#join-btn').prop('disabled', false);
-        $('#join-btn').css('background', '#77dd77');
+        $('#join-submit').prop('disabled', false);
+        $('#join-submit').css('background', '#77dd77');
     }
 }
 
